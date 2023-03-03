@@ -65,6 +65,24 @@
                 justify-content: center;
                 align-items: center;
              }
+
+             #griglia .box-1{
+                width:calc(100% / 9);
+                height: calc(100% / 9);
+                border: solid 1px black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+             #griglia .box-2{
+                width:calc(100% / 7);
+                height: calc(100% / 7);
+                border: solid 1px black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+
              .click{
                 background-color: rgb(0, 195, 255);
               }
