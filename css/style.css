@@ -54,7 +54,6 @@
             width: 50%;
             height: 80%;
             margin: auto;
-            background-color: rgb(127, 255, 212);
             display: flex;
             flex-wrap: wrap;
          }
@@ -62,6 +61,7 @@
                 width:calc(100% / 10);
                 height: calc(100% / 10);
                 border: solid 1px black;
+                background-color: rgb(127, 255, 212);
              }
 
  footer{

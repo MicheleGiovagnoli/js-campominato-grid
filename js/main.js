@@ -9,12 +9,14 @@ domBtn.addEventListener('click',
     function(){
         const domGriglia = document.getElementById('griglia');
 
+
         for( let i = 0; i < 100; i++) {
 
             const box = newBox();
             domGriglia.append(box);
 
         }
+
     }
 );
 
