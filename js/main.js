@@ -10,65 +10,39 @@ domBtn.addEventListener('click',
         
         const domGriglia = document.getElementById('griglia');
         let domDifficolta = document.getElementById('difficolta');
+        let difficolta = domDifficolta.value;
         console.log(domDifficolta.value);
-         
-        if(domDifficolta.value == 0) {
-            for( let i = 0; i < 100; i++) {
-                const box = newBox_0(i+1);
-                domGriglia.append(box);
-                box.addEventListener('click',
-                    function(){
-                        this.classList.toggle('click');
-                        console.log(box.innerHTML);
-                    }
-                );
-            }
-        }
-        else if (domDifficolta.value == 1) {
-            for( let i = 0; i < 81; i++) {
-                const box = newBox_1(i+1);
-                domGriglia.append(box);
-                box.addEventListener('click',
-                    function(){
-                        this.classList.toggle('click');
-                        console.log(box.innerHTML);
-                    }
-                );
-            }
-        }
-        else if (domDifficolta.value == 2) {
-            for( let i = 0; i < 49; i++) {
-                const box = newBox_2(i+1);
-                domGriglia.append(box);
 
-                box.addEventListener('click',
-                    function(){
-                        this.classList.toggle('click');
-                        console.log(box.innerHTML);
-                    }
-                );
-            }
+        for( let i = 0; i < difficolta; i++) {
+            const box = newBox(i+1, difficolta);
+            domGriglia.append(box);
+            box.addEventListener('click',
+                function(){
+                    this.classList.toggle('click');
+                    console.log(box.innerHTML);
+                }
+            );
         }
     }
 );
 
-
-function newBox_0(numero){
-    const box = document.createElement('div');
-    box.classList.add('box');
-    box.innerHTML = numero;
-    return box;
+function newBox(numero, difficolta){
+    if(difficolta == 100){
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.innerHTML = numero;
+        return box;
+    }
+    else if (difficolta == 81){
+        const box = document.createElement('div');
+        box.classList.add('box-1');
+        box.innerHTML = numero;
+        return box;
+    }
+    else{
+        const box = document.createElement('div');
+        box.classList.add('box-2');
+        box.innerHTML = numero;
+        return box;
+    }
 }
-function newBox_1(numero){
-    const box = document.createElement('div');
-    box.classList.add('box-1');
-    box.innerHTML = numero;
-    return box;
-}
-function newBox_2(numero){
-    const box = document.createElement('div');
-    box.classList.add('box-2');
-    box.innerHTML = numero;
-    return box;
-}
-
