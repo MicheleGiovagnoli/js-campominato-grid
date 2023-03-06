@@ -5,11 +5,12 @@
 //Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 const domBtn = document.getElementById('btn');
+const domGriglia = document.getElementById('griglia');
+let domDifficolta = document.getElementById('difficolta');
+
 domBtn.addEventListener('click',
     function(){
-        
-        const domGriglia = document.getElementById('griglia');
-        let domDifficolta = document.getElementById('difficolta');
+        domGriglia.innerHTML= '';
         let difficolta = domDifficolta.value;
         console.log(domDifficolta.value);
 
@@ -27,25 +28,18 @@ domBtn.addEventListener('click',
 );
 
 function newBox(numero, difficolta){
+    const box = document.createElement('div');
+    box.classList.add('box-general');
+    box.innerHTML = numero;
+
     if(difficolta == 100){
-        const box = document.createElement('div');
         box.classList.add('box');
-        box.classList.add('box-general');
-        box.innerHTML = numero;
-        return box;
     }
     else if (difficolta == 81){
-        const box = document.createElement('div');
-        box.classList.add('box-1');
-        box.classList.add('box-general');
-        box.innerHTML = numero;
-        return box;
+        box.classList.add('box-1'); 
     }
     else{
-        const box = document.createElement('div');
-        box.classList.add('box-2');
-        box.classList.add('box-general');
-        box.innerHTML = numero;
-        return box;
+        box.classList.add('box-2');  
     }
+    return box;
 }
