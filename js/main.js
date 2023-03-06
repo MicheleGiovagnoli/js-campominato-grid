@@ -30,18 +30,21 @@ function newBox(numero, difficolta){
     if(difficolta == 100){
         const box = document.createElement('div');
         box.classList.add('box');
+        box.classList.add('box-general');
         box.innerHTML = numero;
         return box;
     }
     else if (difficolta == 81){
         const box = document.createElement('div');
         box.classList.add('box-1');
+        box.classList.add('box-general');
         box.innerHTML = numero;
         return box;
     }
     else{
         const box = document.createElement('div');
         box.classList.add('box-2');
+        box.classList.add('box-general');
         box.innerHTML = numero;
         return box;
     }
